@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Employee Reimbursements</title>
+        <link rel="stylesheet" href="Styles/home.css"   />
+    </head>
+    <h1 id="user-name"></h1>
+    <button type="button" onclick="logout()">Logout</button>
+    <body>
+
+        <header>
+            <div>
+                <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Welding Reimbursements</h1>
+            </div>
+        </header>
+        <div id="reimbursement_container">
+            <!-- Reimbursement requests will be laid out here for specific customer logged in-->
+        </div>
+        <h2>Submit a new reimbursement request:</h2>
+        <div id="submission">
+            <form id="only_form" method="POST" action="http://localhost:7000/reimbursement/new">
+                <input type="text" placeholder="0.00" required maxlength="20" name="reimbursement_amount"/>
+                <input type="text" placeholder="Description" required name="reimbursement_description"/>
+                <input type="hidden" placeholder="Name" required name="employee_name" value="" id="user_input"/>
+                <input type="submit" value="Submit Reimbursement" required/>
+            </form>
+        </div>
+        <style>
+            h3{
+                color:black;
+            }
+            .reimbursement_div{
+                background-color: lightslategray;
+            }
+        </style>
+        <footer>
+            <h5>Copyright No One. No Rights Reserved.</h5>
+        </footer>
+        <script src="Scripts/ajax.js"></script>
+    </body>
+</html>
